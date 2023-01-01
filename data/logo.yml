@@ -1,0 +1,12 @@
+---
+# MTR logo colors
+# Source: https://esearch.ipd.gov.hk/
+# Trade mark number: 301043423
+
+red:
+  pantone: 201C
+  rgb: [157, 34, 53]
+white: white
+blue:
+  pantone: 539C
+  rgb: [0, 38, 58]
