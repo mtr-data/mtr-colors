@@ -6,7 +6,9 @@
 red:
   pantone: 201C
   rgb: [157, 34, 53]
-white: white
+white:
+  name: white
+  rgb: [255, 255, 255]
 blue:
   pantone: 539C
   rgb: [0, 38, 58]
