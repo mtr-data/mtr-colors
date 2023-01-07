@@ -3,12 +3,19 @@
   "type": "object",
   "patternProperties": {
     "^[A-Za-z_]+$": {
+      "description": "Color key",
       "type": "object",
       "properties": {
+        "name": {
+          "description": "W3C color name",
+          "type": "string"
+        },
         "pantone": {
+          "description": "Pantone color name",
           "type": "string"
         },
         "rgb": {
+          "description": "RGB values",
           "type": "array",
           "items": {
             "type": "number"
@@ -19,7 +26,8 @@
       },
       "required": [
         "rgb"
-      ]
+      ],
+      "additionalProperties": false
     }
   }
 }
