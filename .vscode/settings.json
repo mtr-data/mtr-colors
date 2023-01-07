@@ -1,6 +1,7 @@
 {
   "editor.tabSize": 2,
   "yaml.schemas": {
-    "data/.schema/logo.json": "data/logo.yml"
+    "data/.schema/logo.json": "data/logo.yml",
+    "data/.schema/system_map.json": "data/system_map.yml"
   }
 }
