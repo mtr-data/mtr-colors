@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	datahandlers "src/data_handlers"
 )
 
 func main() {
@@ -16,11 +17,13 @@ func main() {
 	}
 
 	filename := args[0]
-	str, err := ReadFileAsYamlStr(filename)
+	logoData, err := datahandlers.HandleLogo(filename)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
 
-	fmt.Println(str)
+	for key, value := range *logoData {
+		fmt.Printf("Key: %s, value: %v\n", key, value)
+	}
 }
