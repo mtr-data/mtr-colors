@@ -4,5 +4,5 @@ package utils
 type StringToAnyMap = map[string]interface{}
 
 // RGB
-type RgbArray = [3]uint16
+type RgbArray = [3]uint8
 type NameToColorMap = map[string]RgbArray

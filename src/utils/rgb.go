@@ -1,7 +1,7 @@
 package utils
 
-func ToRgbValue(arg interface{}) uint16 {
-	return uint16(arg.(int))
+func ToRgbValue(arg interface{}) uint8 {
+	return uint8(arg.(int))
 }
 
 func GetRgbArray(arg []interface{}) (out *RgbArray, err error) {
