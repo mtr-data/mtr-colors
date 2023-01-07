@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "patternProperties": {
+    "^[A-Za-z_]+$": {
+      "type": "object",
+      "properties": {
+        "pantone": {
+          "type": "string"
+        },
+        "rgb": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "required": [
+        "rgb"
+      ]
+    }
+  }
+}
