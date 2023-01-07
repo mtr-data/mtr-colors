@@ -25,13 +25,12 @@ func ReadFileAsBytes(filename string) (data []byte, err error) {
 }
 
 func ReadFileAsYaml(filename string) (out *yaml.Node, err error) {
-	var root yaml.Node
-
 	data, err := ReadFileAsBytes(filename)
 	if err != nil {
 		return nil, err
 	}
 
+	var root yaml.Node
 	err = yaml.Unmarshal(data, &root)
 	return &root, err
 }
