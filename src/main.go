@@ -4,7 +4,15 @@ import (
 	"fmt"
 	"os"
 	datahandlers "src/data_handlers"
+	"src/utils"
 )
+
+func checkErr(err error) {
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
+	}
+}
 
 func main() {
 	args := os.Args[1:]
@@ -17,13 +25,14 @@ func main() {
 	}
 
 	filename := args[0]
-	logoData, err := datahandlers.HandleLogo(filename)
-	if err != nil {
-		fmt.Fprintln(os.Stderr, err)
-		os.Exit(1)
-	}
+	data, err := utils.ReadFileAsYaml(filename)
+	checkErr(err)
 
-	for key, value := range *logoData {
-		fmt.Printf("Key: %s, value: %v\n", key, value)
+	handler := datahandlers.HandleLogo
+	result, err := handler(data)
+	checkErr(err)
+
+	for key, value := range *result {
+		fmt.Printf("Key: %s, Value: %v\n", key, value)
 	}
 }

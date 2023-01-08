@@ -6,12 +6,7 @@ import (
 
 const RGB_KEY = "rgb"
 
-func HandleLogo(filename string) (out *utils.NameToColorMap, err error) {
-	data, err := utils.ReadFileAsYaml(filename)
-	if err != nil {
-		return nil, err
-	}
-
+func HandleLogo(data interface{}) (out *utils.NameToColorMap, err error) {
 	result := make(utils.NameToColorMap)
 
 	for colorName, colorObject := range data.(utils.StringToAnyMap) {
